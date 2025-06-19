@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@plugin 'tailwind-scrollbar';
+
+/** Don't remove the focus outline, but ensure it is inside the border of the element */
+*:focus {
+  outline: 1px solid red !important;
+  outline-offset: -3.5px !important;
+}
+
+*::selection {
+  @apply bg-gray-600 text-white;
+}
+
+/** Don't inset the input focus state so it doesn't look blurry */
+input:focus {
+  outline-offset: 0px !important;
+}
+
+body {
+  accent-color: red;
+}
