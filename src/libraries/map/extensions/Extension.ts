@@ -38,6 +38,10 @@ class Extension {
         this.initialized = true;
     }
 
+    public getContainer(): HTMLElement | null {
+        return this.map?.getTargetElement() ?? null;
+    }
+
     public beforeMount(): void {
         //
     }

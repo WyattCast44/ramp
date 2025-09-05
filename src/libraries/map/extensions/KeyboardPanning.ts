@@ -22,14 +22,15 @@ class KeyboardPanning extends Extension {
    }
 
    afterRender() {
-      this.container = this.map?.getTargetElement() ?? null;
-      this.container?.addEventListener('keydown', this.handleKeyDown.bind(this));
-      this.container?.addEventListener('keyup', this.handleKeyUp.bind(this));
+      let c = this.getContainer();
+      c?.addEventListener('keydown', this.handleKeyDown.bind(this));
+      c?.addEventListener('keyup', this.handleKeyUp.bind(this));
    }
 
    beforeUnmount() {
-      this.container?.removeEventListener('keydown', this.handleKeyDown);
-      this.container?.removeEventListener('keyup', this.handleKeyUp);
+      let c = this.getContainer();
+      c?.removeEventListener('keydown', this.handleKeyDown);
+      c?.removeEventListener('keyup', this.handleKeyUp);
    }
 
    handleKeyUp(event: KeyboardEvent) {

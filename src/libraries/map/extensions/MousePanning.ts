@@ -2,11 +2,11 @@ import Extension from "./Extension";
 
 class MousePanning extends Extension {
   afterRender() {
-    this.container?.addEventListener("mousedown", this.handleMouseDown.bind(this));
+    this.getContainer()?.addEventListener("mousedown", this.handleMouseDown.bind(this));    
   }
 
   beforeUnmount() {
-    this.container?.removeEventListener("mousedown", this.handleMouseDown);
+    this.getContainer()?.removeEventListener("mousedown", this.handleMouseDown);
   }
 
   handleMouseDown(event: MouseEvent) {

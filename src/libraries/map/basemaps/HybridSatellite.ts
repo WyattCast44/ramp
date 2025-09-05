@@ -17,7 +17,11 @@ class HybridSatelliteBasemap extends Basemap {
     }
 
     public getPreviewUrl(): string {
-        return 'maps/satellite.png';
+        return 'maps/hybrid.png';
+    }
+
+    public shouldBeAvailable(): boolean {
+        return import.meta.env.VITE_GOOGLE_MAPS_API_KEY !== undefined && import.meta.env.VITE_GOOGLE_MAPS_API_KEY !== '';
     }
 
     public getSource(): TileSource {
@@ -25,7 +29,8 @@ class HybridSatelliteBasemap extends Basemap {
             key: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
             scale: 'scaleFactor2x',
             highDpi: true,
-            mapType: 'roadmap',
+            mapType: 'satellite',
+            layerTypes: ['layerRoadmap']
         })
     }
 }

@@ -6,7 +6,6 @@ class Extensions
      * The registered extensions map.
      */
     private extensions = new Map();
-
     /**
      * The initialized state of the extensions.
      */

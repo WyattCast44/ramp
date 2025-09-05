@@ -5,7 +5,6 @@ import FooterToolbar from "./components/FooterToolbar";
 import LeftToolbar from "./components/LeftToolbar";
 import RightToolbar from "./components/RightToolbar";
 import { useAppStore, type AppStore } from "../../stores";
-import { setupMapEventHandlers } from "../../libraries/events/map.event-handler";
 
 function createMapContainerElement() {
     const container = document.createElement('div');
@@ -31,9 +30,6 @@ export default function Map() {
    const setMapInstance = useAppStore((state: AppStore) => state.map.setInstance);
 
    useEffect(() => {
-      // Initialize map event handlers
-      setupMapEventHandlers();
-
       if (ref.current === null) return;
 
       /**

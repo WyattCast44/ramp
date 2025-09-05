@@ -5,6 +5,7 @@ import OpenLayersMap from "ol/Map";
 import { useGeographic } from "ol/proj";
 import { defaults as defaultInteractions } from "ol/interaction/defaults";
 import Extensions from "./extensions/Extensions";
+import Manager from "./layers/Manager";
 
 interface CartographerOptions {
   id?: string;
@@ -51,9 +52,15 @@ class Cartographer {
    */
   mounted: boolean = false;
 
+  /**
+   * The layers manager for the Cartographer.
+   */
+  layers: Manager;
+
   constructor(options: CartographerOptions = {}) {
     this.options = options;
     this.extensions = new Extensions();
+    this.layers = new Manager();
     this.id = options.id || getUid(this);
   }
 
@@ -156,15 +163,6 @@ class Cartographer {
       }),
       layers: [],
     });
-
-    // if(navigator.onLine) {
-    //   const tileLayer = new TileLayer({
-    //     source: new OSM(),
-    //     extent: [-180, -90, 180, 90],
-    //   });
-
-    //   this.map?.addLayer(tileLayer)
-    // }
   }
 }
 

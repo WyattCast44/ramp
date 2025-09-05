@@ -56,6 +56,10 @@ abstract class Basemap {
 
     public abstract getPreviewUrl(): string;
 
+    public shouldBeAvailable(): boolean {
+        return true;
+    }
+
     public getId(): string {
         return this.id;
     }

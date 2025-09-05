@@ -25,7 +25,6 @@ export default function DateTimeDisplay() {
   const handleTimezoneChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setTimezone(e.target.value);
     setIsOpen(false);
-    console.log(e.target.value, timezone);
   };
 
   return (

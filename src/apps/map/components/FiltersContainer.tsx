@@ -130,9 +130,9 @@ export default function FiltersContainer({
     <div>
       <button
         onClick={() => setIsOpen(true)}
-        className="flex h-12 cursor-pointer items-center justify-center space-x-1.5 border-l border-gray-700 px-2.5 text-gray-400"
+        className="flex h-12 cursor-pointer items-center justify-center space-x-1.5 border-l border-gray-700 px-2.5 text-gray-400 hover:text-white"
       >
-        <AdjustmentsHorizontalIcon className="size-5 stroke-current text-gray-400" />
+        <AdjustmentsHorizontalIcon className="size-5 stroke-current" />
         <ChevronUpIcon
           className={`h-4 w-4 stroke-current text-gray-400 ${
             isOpen ? "rotate-180" : ""
@@ -182,6 +182,7 @@ export default function FiltersContainer({
                       Number(e.target.value)
                     );
                   }}
+                  className="accent-blue-600"
                   type="range"
                   min={0}
                   max={200}
